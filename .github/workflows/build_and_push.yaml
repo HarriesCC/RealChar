@@ -4,9 +4,13 @@ on:
   release:
     types: [published]  # This triggers the workflow when a release is published
 
+  push:
+    branches:
+      - main
+
 jobs:
   build:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
 
     steps:
     - name: Set up Docker Buildx
@@ -22,4 +26,4 @@ jobs:
       uses: docker/build-push-action@v4
       with:
         push: true
-        tags: shaunly/real_char:latest
+        tags: harrieschen/real_char:latest
