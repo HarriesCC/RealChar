@@ -1,0 +1,1 @@
+web: uvicorn realtime_ai_character.main:app --port 8000
